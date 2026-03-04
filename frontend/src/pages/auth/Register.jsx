@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import styles from '../../styles/loginPage.module.css'
+import { useNavigate } from 'react-router-dom'
+
 
 const Register = () => {
   // javascript
+  const navigate = useNavigate()
   const [form, setFrom] = useState({
     email: '',
     password: '',
@@ -30,6 +34,7 @@ const Register = () => {
       const result = await axios.post('http://localhost:5000/api/register', form)
       console.log(result.data)
       toast.success(result.data)
+      navigate('/login')
     } catch (error) {
       const errMsg = error.response?.data?.message
       toast.error(errMsg)
@@ -38,32 +43,32 @@ const Register = () => {
   }
 
   return (
-    <div>
-      Register
-      <form onSubmit={hldSubmit}>
+    <div className={`${styles.container}`}>
+      <h1 className={styles.title}>Register</h1>
+      <form onSubmit={hldSubmit} className={styles.formCard}>
 
-        <label>Email</label>
-        <input className='border'
+        <label className={styles.label} >Email</label>
+        <input className={styles.input}
           onChange={hdlOnChange}
           type='email'
           name='email'
         />
 
-        <label>Password</label>
-        <input className='border'
+        <label className={styles.label}>Password</label>
+        <input className={styles.input}
           onChange={hdlOnChange}
           type='text'
           name='password'
         />
 
-        <label>Confirm Password</label>
-        <input className='border'
+        <label className={styles.label}>Confirm Password</label>
+        <input className={styles.input}
           onChange={hdlOnChange}
           type='text'
           name='confirmPassword'
         />
 
-        <button className='bg-gray-700 rounded-4xl p-1'>Register</button>
+        <button className={styles.submitButton}>Register</button>
 
       </form>
 

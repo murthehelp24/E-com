@@ -1,21 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styles from '../styles/Navbar.module.css'
 
 const MainNav = () => {
   return (
-    <nav className='bg-gray-300'>
+    <nav className={`${styles.navContainer}`}>
       <div className='mx-auto px-3'>
         <div className='flex justify-between h-16'>
           <div className='flex  items-center gap-4'>
-            <Link to={'/'} className='text-2xl font-bold'>LOGO</Link>
-            <Link to={'/'}>Home</Link>
-            <Link to={'/shop'}>Shop</Link>
-            <Link to={'/cart'}>Cart</Link>
+            <Link to={'/'} className={styles.logo}>LOGO</Link>
+            <Link to={'/'} className={styles.navLink}>Home</Link>
+            <Link to={'/shop'} className={styles.navLink}>Shop</Link>
+            <Link to={'/cart'} className={styles.navLink}>Cart</Link>
           </div>
 
           <div className='flex items-center gap-4'>
-            <Link to={'/register'}>Register</Link>
-            <Link to={'/login'}>Login</Link>
+            <Link to={'/register'} className={styles.loginBtn}>Register</Link>
+            <Link to={'/login'}className={styles.loginBtn}>Login</Link>
           </div>
         </div>
       </div>

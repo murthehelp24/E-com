@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+.navContainer {
+  @apply fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm;
+}
+
+.logo {
+  @apply text-xl font-black text-gray-800 tracking-tighter hover:text-gray-600 transition-colors mr-6;
+}
+
+.navLink {
+  @apply text-lg font-semibold text-gray-500 hover:text-gray-900 transition-all px-2 py-1;
+}
+
+.loginBtn {
+  @apply text-lg font-bold text-gray-600 hover:text-gray-900 transition-all px-4 py-2;
+}
+
+.registerBtn {
+  @apply text-lg font-bold text-white bg-gray-600 hover:bg-gray-700 px-5 py-2.5 rounded-lg shadow-sm hover:shadow-md transition-all active:scale-95;
+}
+
+.contentWrapper {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
